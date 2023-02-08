@@ -17,13 +17,5 @@ pipeline {
         sh 'node --version'
       }
     }
-    stage('DB') {
-      agent {
-        docker { image 'mysql:latest' }
-      }
-      steps {
-        sh "mysql -uUSERNAME -pPASSWORD -hHOSTNAME -P3306 -e \'DROP <cmd>\'  <database>"
-      }
-    }
   }
 }
